@@ -1,0 +1,64 @@
+<div class="ConfiguratorForm">
+
+  
+
+  <form class="ConfiguratorForm__form" (ngSubmit)="onSubmit()">
+    <img src="{{solarImage}}" />
+    <div class="ConfiguratorForm__formfields">
+      <fieldset>
+        <legend>Material:</legend>
+        
+        <input type="radio" name="material" id="holz" />
+        <label for="holz">Holz</label>
+
+        <input type="radio" name="material" id="aluminium" />
+        <label for="aluminium">Aluminium</label>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Größe:</legend>
+
+        <label for="width">Breite x Tiefe:</label>
+
+        <select>
+          <option *ngFor="let item of sizings">{{item.width}} x {{item.deep}}</option>
+        </select>
+        
+        <span class="ConfiguratorForm__label">m</span>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Dachrichtung:</legend>
+        
+        <label for="roofDir">Himmelsrichtung:</label>
+        <select id="roofDirection" required>
+          <option *ngFor="let direction of roofDirections" [value]="direction">{{direction}}</option>
+        </select>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Postleitzahl & Eigenverbrauch:</legend>
+        
+        <label for="zipcode">Ihre Postleitzahl:</label>
+        <input type="text" name="zipcode" id="zipcode" />
+
+        <label for="ownUsage">Eigenverbrauch:</label>
+        <input type="text" name="ownUsage" id="ownUsage" />
+
+      </fieldset>
+
+      <fieldset>
+        <button type="submit">Nächster Schritt</button>
+
+      </fieldset>
+    </div>
+  </form>
+
+  <p class="ConfiguratorForm__message">
+    Bereits nach <span>0</span> Jahren hat sich Ihre Solarterrasse selbst finanziert und erwirtschaftet ab diesem Moment Gewinn.
+  </p>
+
+</div>
